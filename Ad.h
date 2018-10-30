@@ -11,15 +11,16 @@ This class creats an advertising object, witch will be displayed in the LCD
 
 */
 
-#include "Ad.cpp"
 
 class Ad {
-		string advertise; //Advertising message
+		string advertisement; //Advertising message
 	public:
 		Ad(void); //Constructor without params
 		Ad(string); //Constructor to instantiate the objetct with a message
 		~Ad(void); //Destructor
-		int getAd(void); //Return the advertise 
-		void setAd(int); //Change the advertise
-		friend ostream& operator<< (ostream& c, Ad v);
+		string getAd(void); //Return the advertisement 
+		void setAd(string); //Change the advertisement
+		friend ostream& operator<<(ostream& c, Ad v);
+		
 };
+

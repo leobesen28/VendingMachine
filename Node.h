@@ -22,4 +22,5 @@ class Node {
     Node* getNextNode();
     void setValue(T value);
     void setNextNode(Node* nextNode);
+    
 };

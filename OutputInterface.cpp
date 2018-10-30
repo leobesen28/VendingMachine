@@ -14,3 +14,6 @@
 void OutputInterfaceWindows::printToUser(string data){
 	cout << "System Info: " << data << endl;
 }
+void OutputInterfaceWindows::printAd(string ad){
+	cout << ad << endl;
+}

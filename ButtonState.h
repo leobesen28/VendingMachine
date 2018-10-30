@@ -8,7 +8,6 @@
 ----------------------------------------------------- 
 
 */
-#include "main.h"
 
 class ButtonState{
 		bool M025, M050, M100; //moedas
