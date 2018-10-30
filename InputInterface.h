@@ -13,17 +13,20 @@
 
 class InputInterface : public ButtonState {
 	public:
-		virtual void input(void) = 0;
+		virtual void inputButton(void) = 0;
+		virtual string inputAd(void) = 0;
 };
 
 class InputInterfaceWindows : public InputInterface{
 	public:
-		void input(void);
+		void inputButton(void);
+		string inputAd(void);
 };
 
 class InputInterfaceARM : public InputInterface{
 	public:
-		void input(void);
+		void inputButton(void);
+		//string inputAd(void);
 };
 
 

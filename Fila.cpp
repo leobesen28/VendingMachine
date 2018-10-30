@@ -20,7 +20,7 @@ template <class T>
 Fila<T>::~Fila() {
   Node<T>* cursor = head;
   while(head) {
-    cursor = cursor->getNext();
+    cursor = cursor->getNextNode();
     delete head;
     head = cursor;
   }
@@ -37,24 +37,24 @@ void Fila<T>::insertAfterLast(T dat) {
   else {
      while (q != 0) {
         p = q;
-        q = p->getNext();
+        q = p->getNextNode();
      }
-     p->setNext(new Node<T>(dat,0));
+     p->setNextNode(new Node<T>(dat,0));
   }
 }
 
 template <class T>
 T Fila<T>::readFirst() {
-   return head->getVal(); 
+   return head->getValue(); 
 }
 
 template <class T>
 T Fila<T>::removeFirst() {
-  T retval = 0;
+  T retval;
   if (head != 0){
-     retval = head->getVal();
+     retval = head->getValue();
      Node<T>* oldHead = head;
-     head = head->getNext();
+     head = head->getNextNode();
      delete oldHead;
   }
   return retval;
@@ -64,7 +64,12 @@ template <class T>
 void Fila<T>::listAll() {
   Node<T>* aux = head;
   while (aux != 0){
-     cout << aux->getVal() << endl;
-     aux = aux->getNext();
+     cout << aux->getValue() << endl;
+     aux = aux->getNextNode();
   }
+}
+
+template <class T>
+Node<T>* Fila<T>::getHead(void){
+	return head;
 }

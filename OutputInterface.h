@@ -12,10 +12,15 @@
 class OutputInterface{
 	public:
 		virtual void printToUser(string data) = 0;
+		virtual void printAd(string ad) = 0;
 };
 
 class OutputInterfaceWindows : public OutputInterface {
 	public:
 		void printToUser(string data);
-		//void menu(void);
+		void printAd(string ad);
+};
+
+class OutputInterfaceARM : public OutputInterface {
+	
 };

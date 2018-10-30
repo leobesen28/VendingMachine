@@ -24,4 +24,5 @@ class Fila {
   	  T readFirst(void);
   	  T removeFirst(void);
   	  void listAll(void);
+  	  Node<T>* getHead(void);
 };

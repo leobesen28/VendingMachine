@@ -11,16 +11,17 @@
 
 
 #include <iostream>
+using namespace std;
 #include <sstream>
 #include <string>
+#include "InputInterface.cpp"
+#include "OutputInterface.cpp"
+#include "SystemMessage.cpp"
+#include "Fila.cpp"
 
-using std::cerr;
-using std::cin;
-using std::cout;
-using std::endl;
-using std::flush;
-using std::getline;
-using std::istringstream;
-using std::string;
+#include "MachineEstate.cpp"
+#include "AdControl.cpp"
+
+
 
 

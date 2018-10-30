@@ -11,7 +11,7 @@
 
 #include "InputInterface.h"
 
-void InputInterfaceWindows::input(void){
+void InputInterfaceWindows::inputButton(void){
 	
 	short int aux = 0;
 	bool x = true;
@@ -55,4 +55,11 @@ void InputInterfaceWindows::input(void){
 		}
 } 
 
-void InputInterfaceARM::input(void){} //implementar 
+string InputInterfaceWindows::inputAd(void){
+	string c;
+	getline(cin, c);
+	return c;
+}
+
+void InputInterfaceARM::inputButton(void){} //implementar 
+//string InputInterfaceARM::inputAd(void){}

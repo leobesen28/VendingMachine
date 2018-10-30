@@ -22,15 +22,15 @@ EA		NADA	M025		M050		M100		DEV			MEET	ETIRPS
 0x06	0x06	0x06,D025	0x06,D050	0x06, D100	0x00,D150	0x00	0x00
 //////////////////////////////////////////////////////////////////////////////
 */
-#include "InputInterface.cpp"
-#include "OutputInterface.cpp"
-#include "SystemMessage.cpp"
 
-class MachineEstate : public InputInterfaceWindows, public OutputInterfaceWindows{
+class MachineEstate{
 	char EA;
+	char system; //system: 0x01 - Windows | 0x02 - ARM
+	OutputInterface* OutputPtr;
+	InputInterface* InputPtr;
 	SystemMessage SM;
 	public:
-	MachineEstate(void);
+	MachineEstate(char);
 	~MachineEstate(void);	
 	void nextState(void);
 };
