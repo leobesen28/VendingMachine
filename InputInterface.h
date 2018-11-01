@@ -24,21 +24,10 @@ class InputInterfaceWindows : public InputInterface{
 };
 
 class InputInterfaceARM : public InputInterface{
+/*
 	public:
 		void inputButton(void);
-		//string inputAd(void);
+		string inputAd(void);
+*/		
 };
 
-
-/*
-void menu(void){ //implementar na interface de saida
-	
-	cout << "----- MENU ----- " << endl;
-	cout << "   1 - M025" << endl;
-	cout << "   2 - M050" << endl;
-	cout << "   3 - M100" << endl;
-	cout << "   4 - DEV" << endl;
-	cout << "   5 - MEET" << endl;
-	cout << "   6 - ETIRPS" << endl;
-}
-*/

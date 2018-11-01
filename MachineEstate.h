@@ -24,13 +24,12 @@ EA		NADA	M025		M050		M100		DEV			MEET	ETIRPS
 */
 
 class MachineEstate{
-	char EA;
-	char system; //system: 0x01 - Windows | 0x02 - ARM
-	OutputInterface* OutputPtr;
-	InputInterface* InputPtr;
-	SystemMessage SM;
+		char state;
+		OutputInterface* outputPtr;
+		InputInterface* inputPtr;
+		SystemMessage sm;
 	public:
-	MachineEstate(char);
-	~MachineEstate(void);	
-	void nextState(void);
+		MachineEstate(void);
+		~MachineEstate(void);	
+		void nextState(void);
 };

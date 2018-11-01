@@ -11,72 +11,52 @@
 
 #include "AdControl.h"
 
+AdControl::AdControl(void){
+	
+	#ifdef SYSTEM_WINDOWS
+		outputPtr = new OutputInterfaceWindows;
+		inputPtr = new InputInterfaceWindows;
+	#endif
+	#ifdef SYSTEM_STM32
+		//outputPtr = new OutputInterfaceARM;
+		//inputPtr = new InputInterfaceARM;
+	#endif	
+}
 
-AdControl::AdControl(char system){
-	this->system = system;
+AdControl::~AdControl(void){
+	delete inputPtr;
+	delete outputPtr;
 }
 
 //Transfer the ads located in NewAds to DisplayAds 
-void AdControl::AddNewAds(void){
-	Fila<Ad> aux;
+void AdControl::addNewAds(void){
 	
-	if(system == 0x01){
-		OutputPtr = new OutputInterfaceWindows;
-		InputPtr = new InputInterfaceWindows;
+	if(newAds.getHead() == 0){
+		outputPtr->printToUser("No ads to display...");
 	}else{
-		//OutputPtr = new OutputInterfaceARM;
-		//InputPtr = new InputInterfaceARM;
-	}
-	
-	if(NewAds.getHead() == 0){
-		OutputPtr->printToUser("Nenhum anuncio");
-	}else{
-		while(NewAds.getHead() != 0){
-			DisplayAds.insertAfterLast(NewAds.removeFirst());
+		while(newAds.getHead() != 0){
+			displayAds.insertAfterLast(newAds.removeFirst());
 		}
 	}
-	
-	delete InputPtr;
-	delete OutputPtr;
 } 
 //Display an Ad
-void AdControl::SendAdToDisplay(void){
+void AdControl::sendAdToDisplay(void){
 	
-	if(system == 0x01){
-	   	OutputPtr = new OutputInterfaceWindows;
-		InputPtr = new InputInterfaceWindows;
+	if(displayAds.getHead() == 0){
+		outputPtr->printToUser("List of advertisement is empty");
 	}else{
-		//OutputPtr = new OutputInterfaceARM;
-		//InputPtr = new InputInterfaceARM;
-	}
-	
-	if(DisplayAds.getHead() == 0){
-		OutputPtr->printToUser("List of advertisement is empty");
-	}else{
-		NowInDisplay = DisplayAds.removeFirst();
-		OutputPtr->printAd(NowInDisplay.getAd());
-	}
-	delete InputPtr;
-	delete OutputPtr;
-	
+		nowInDisplay = displayAds.removeFirst();
+		outputPtr->printAd(nowInDisplay.getAd());
+	}	
 }
 //Return the Ad from the display to the end of the list
-void AdControl::GetAdFromDisplay(void){
-	DisplayAds.insertAfterLast(NowInDisplay);
+void AdControl::getAdFromDisplay(void){
+	
+	displayAds.insertAfterLast(nowInDisplay);
 } 
 //Receive new ad from user
-void AdControl::ReceiveNewAd(void){
+void AdControl::receiveNewAd(void){
 	
-	if(system == 0x01){
-		OutputPtr = new OutputInterfaceWindows;
-		InputPtr = new InputInterfaceWindows;
-	}else{
-		//OutputPtr = new OutputInterfaceARM;
-		//InputPtr = new InputInterfaceARM;
-	}
-	
-	OutputPtr->printToUser("Write below the new Advertisement");
-	NewAds.insertAfterLast(InputPtr->inputAd());
-	delete InputPtr;
-	delete OutputPtr;
+	outputPtr->printToUser("Write below the new Advertisement");
+	newAds.insertAfterLast(inputPtr->inputAd());
 } 

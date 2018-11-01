@@ -12,57 +12,133 @@
 #include "ButtonState.h"
 
 ButtonState::ButtonState(void){
-	M025 = 0;
-	M050 = 0;
-	M100 = 0; 
-	DEV = 0;
-	MEET = 0;
-	ETIRPS = 0;
+	m025 = 0;
+	m050 = 0;
+	m100 = 0; 
+	dev = 0;
+	meet = 0;
+	etirps = 0;
 }
 
 ButtonState::~ButtonState(void){}
+
+/*
+params
+	button : 	BUTTON_M025 
+				BUTTON_M050 	 
+				BUTTON_M100 	
+				BUTTON_DEV  	 
+				BUTTON_MEET 	
+				BUTTON_ETIRPS 
 	
-void ButtonState::setButtonState(bool M025, bool M050, bool M100, bool DEV, bool MEET, bool ETIRPS){
-	this->M025 = M025;
-	this->M050 = M050;
-	this->M100 = M100; 
-	this->DEV = DEV;
-	this->MEET = MEET;
-	this->ETIRPS = ETIRPS;
+	state : 	true or false
+*/
+
+
+	
+void ButtonState::setButtonState(char button, bool state){
+	resetButtonState(0x01, 0x00);
+	switch(button){
+		case 0x01:
+			this->m025 = state;
+			break;
+		case 0x02:
+			this->m050 = state;
+			break;
+		case 0x03:
+			this->m100 = state;
+			break;
+		case 0x04:
+			this->dev = state;
+			break;
+		case 0x05:
+			this->meet = state;
+			break;
+		case 0x06:
+			this->etirps = state;
+			break;
+		default:
+			//criar enum de status de operações STATUS_OK, STATUS_ERRO
+			break;
+	}	
 }
 
-//parametro - numero do botão
 /*
-1 - M025
-2 - M050
-3 - M100
-4 - DEV
-5 - MEET
-6 - ETIRPS
+params
+	button : 	BUTTON_M025 
+				BUTTON_M050 	 
+				BUTTON_M100 	
+				BUTTON_DEV  	 
+				BUTTON_MEET 	
+				BUTTON_ETIRPS 
 */
-bool ButtonState::getButtonState(char numeroBotao){
-	switch(numeroBotao){
-		case 1:
-			return M025;
+
+bool ButtonState::getButtonState(char button){
+	switch(button){
+		case 0x01:
+			return m025;
 			break;
-		case 2:
-			return M050;
+		case 0x02:
+			return m050;
 			break;
-		case 3:
-			return M100;
+		case 0x03:
+			return m100;
 			break;
-		case 4:
-			return DEV;
+		case 0x04:
+			return dev;
 			break;
-		case 5:
-			return MEET;
+		case 0x05:
+			return meet;
 			break;
-		case 6:
-			return ETIRPS;
+		case 0x06:
+			return etirps;
 			break;
 		default:
 			return 0;
 			break;
+	}
+}
+/*
+To clear all the buttons state: allButtons = 1, buttonNumber = don't care
+To clear just one button: allButtons = 0, button = 	BUTTON_M025 
+													BUTTON_M050 	 
+													BUTTON_M100 	
+													BUTTON_DEV  	 
+													BUTTON_MEET 	
+													BUTTON_ETIRPS 
+*/
+void ButtonState::resetButtonState(char allButtons, char button){
+	if(allButtons == 0x01){
+		m025 = 0;
+		m050 = 0;
+		m100 = 0; 
+		dev = 0;
+		meet = 0;
+		etirps = 0;
+	}else{
+		switch(button){
+			case 0x01:
+				this->m025 = 0;
+				break;
+			case 0x02:
+				this->m050 = 0;
+				break;
+			case 0x03:
+				this->m100 = 0;
+				break;
+			case 0x04:
+				this->dev = 0;
+				break;
+			case 0x05:
+				this->meet = 0;
+				break;
+			case 0x06:
+				this->etirps = 0;
+				break;
+			default:
+				//criar enum de status de operações STATUS_OK, STATUS_ERRO
+				break;
+			}
 	}
 }
 

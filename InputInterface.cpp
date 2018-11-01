@@ -32,25 +32,24 @@ void InputInterfaceWindows::inputButton(void){
     }
 		switch(aux){
 			case 1:
-				setButtonState(1, 0, 0, 0, 0, 0);
+				setButtonState(BUTTON_M025, 1);
 				break;
 			case 2:
-				setButtonState(0, 1, 0, 0, 0, 0);
+				setButtonState(BUTTON_M050, 1);
 				break;
 			case 3:
-				setButtonState(0, 0, 1, 0, 0, 0);
+				setButtonState(BUTTON_M100, 1);
 				break;
 			case 4:
-				setButtonState(0, 0, 0, 1, 0, 0);
+				setButtonState(BUTTON_DEV, 1);
 				break;
 			case 5:
-				setButtonState(0, 0, 0, 0, 1, 0);
+				setButtonState(BUTTON_MEET, 1);
 				break;
 			case 6:
-				setButtonState(0, 0, 0, 0, 0, 1);
+				setButtonState(BUTTON_ETIRPS, 1);
 				break;
 			default:
-				setButtonState(0, 0, 0, 0, 0, 0);
 				break;
 		}
 } 

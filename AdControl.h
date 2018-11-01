@@ -11,20 +11,19 @@
 
 #include "Ad.cpp"
 
-
 class AdControl {
-		char system;
-		Fila<Ad> DisplayAds;
-		Fila<Ad> NewAds;
-		Ad NowInDisplay;
-		InputInterface* InputPtr;
-		OutputInterface* OutputPtr;
+		Fila<Ad> displayAds;
+		Fila<Ad> newAds;
+		Ad nowInDisplay;
+		InputInterface* inputPtr;
+		OutputInterface* outputPtr;
 	public:
-		AdControl(char);
-		void AddNewAds(void); //Transfer the ads located in NewAds to DisplayAds 
-		void SendAdToDisplay(void); //Display an Ad
-		void GetAdFromDisplay(void); //Return the Ad from the display to the end of the list
-		void ReceiveNewAd(void); //Receive new ad from user
+		AdControl(void);
+		~AdControl(void);
+		void addNewAds(void); //Transfer the ads located in NewAds to DisplayAds 
+		void sendAdToDisplay(void); //Display an Ad
+		void getAdFromDisplay(void); //Return the Ad from the display to the end of the list
+		void receiveNewAd(void); //Receive new ad from user
 };
 
 

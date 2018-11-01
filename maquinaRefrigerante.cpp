@@ -15,13 +15,13 @@
 int main(int argc, char *argv[])
 {
 
-	MachineEstate MaquinaDeRefri(0x01);
-	AdControl ad1(0x01);
+	MachineEstate MaquinaDeRefri;
+	AdControl ad1;
 	
-	ad1.ReceiveNewAd();
-	ad1.ReceiveNewAd();
-	ad1.ReceiveNewAd();
-	ad1.AddNewAds();
+	ad1.receiveNewAd();
+	ad1.receiveNewAd();
+	ad1.receiveNewAd();
+	ad1.addNewAds();
 	cout << endl;
 	while(1){
 			
@@ -36,9 +36,9 @@ int main(int argc, char *argv[])
 			MaquinaDeRefri.nextState();
 			cout << endl;
 			cout << "----- Advertisement -----" << endl;
-			ad1.SendAdToDisplay();
+			ad1.sendAdToDisplay();
 			cout << endl;
-			ad1.GetAdFromDisplay();
+			ad1.getAdFromDisplay();
 	}
 	return 0;
 }

@@ -12,7 +12,7 @@
 #include "OutputInterface.h"
 
 void OutputInterfaceWindows::printToUser(string data){
-	cout << "System Info: " << data << endl;
+	cout << "\nSystem Info: " << data << endl;
 }
 void OutputInterfaceWindows::printAd(string ad){
 	cout << ad << endl;

@@ -11,8 +11,8 @@
 
 class OutputInterface{
 	public:
-		virtual void printToUser(string data) = 0;
-		virtual void printAd(string ad) = 0;
+		virtual void printToUser(string) = 0;
+		virtual void printAd(string) = 0;
 };
 
 class OutputInterfaceWindows : public OutputInterface {
@@ -22,5 +22,8 @@ class OutputInterfaceWindows : public OutputInterface {
 };
 
 class OutputInterfaceARM : public OutputInterface {
-	
+/*	public:
+		void printToUser(string data);
+		void printAd(string ad);
+*/
 };
