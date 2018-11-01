@@ -1,10 +1,12 @@
 /*
+
 -----------------------------------------------------
-|		FEDERAL UNIVERSOTY OF SANTA CATARINA		|
+|		FEDERAL UNIVERSITY OF SANTA CATARINA		|
 |			C++ FOR EMBEDDED SYSTEMS				|
 |			PROJECT: VENDING MACHINE				|
 |		PROFESSOR: EDUARDO AUGUSTO BEZERRA			|
 | 	 	 	 LEONARDO AURÉLIO BESEN					|
+|			JOÃO BATISTA CORDEIRO NETO				|
 ----------------------------------------------------- 
 
 */
@@ -60,5 +62,5 @@ string InputInterfaceWindows::inputAd(void){
 	return c;
 }
 
-void InputInterfaceARM::inputButton(void){} //implementar 
+//void InputInterfaceARM::inputButton(void){} //implementar 
 //string InputInterfaceARM::inputAd(void){}

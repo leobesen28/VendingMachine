@@ -1,12 +1,16 @@
 /*
+
 -----------------------------------------------------
-|		FEDERAL UNIVERSOTY OF SANTA CATARINA		|
+|		FEDERAL UNIVERSITY OF SANTA CATARINA		|
 |			C++ FOR EMBEDDED SYSTEMS				|
 |			PROJECT: VENDING MACHINE				|
 |		PROFESSOR: EDUARDO AUGUSTO BEZERRA			|
 | 	 	 	 LEONARDO AURÉLIO BESEN					|
+|			JOÃO BATISTA CORDEIRO NETO				|
 ----------------------------------------------------- 
 
+*/
+/*
  ------BUTUONS DEFINES-------
 */	
 #define	 BUTTON_M025 	0x01
