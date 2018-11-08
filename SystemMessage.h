@@ -11,6 +11,11 @@
 
 */
 
+/*
+This class contain the system information to be displayed to users
+
+*/
+
 class SystemMessage {
 	  string   T000, //Credit 0.00
 			   T025, //Credit 0.25

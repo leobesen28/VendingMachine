@@ -36,8 +36,6 @@ params
 	state : 	true or false
 */
 
-
-	
 void ButtonState::setButtonState(char button, bool state){
 	resetButtonState(0x01, 0x00);
 	switch(button){
@@ -138,7 +136,6 @@ void ButtonState::resetButtonState(char allButtons, char button){
 				this->etirps = 0;
 				break;
 			default:
-				//criar enum de status de operações STATUS_OK, STATUS_ERRO
 				break;
 			}
 	}

@@ -11,6 +11,14 @@
 
 */
 /*
+ButtonState class keeps the state of the buttons. Each of them if represented by
+a boolean member variable of the class. 
+Member functions give acess to get and set the buttons state. 
+
+*/
+
+
+/*
  ------BUTUONS DEFINES-------
 */	
 #define	 BUTTON_M025 	0x01

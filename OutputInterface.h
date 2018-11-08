@@ -10,19 +10,27 @@
 ----------------------------------------------------- 
 
 */
-
+/*
+The abstract class OutputInterface is a base class which can be inherited by different systems outputs
+*/
 class OutputInterface{
 	public:
 		virtual void printToUser(string) = 0;
 		virtual void printAd(string) = 0;
 };
-
+/*
+OutputInterfaceWindows class implements a Windows system output. 
+All the output information is displayed in a windows prompt
+*/
 class OutputInterfaceWindows : public OutputInterface {
 	public:
 		void printToUser(string data);
 		void printAd(string ad);
 };
-
+/*
+OutputInterfaceARM class implements a ARM system output. 
+All the output information will be implemented in an output peripheral of the STM32F429 board 
+*/
 class OutputInterfaceARM : public OutputInterface {
 /*	public:
 		void printToUser(string data);

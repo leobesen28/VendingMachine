@@ -11,6 +11,10 @@
 
 */
 
+/*
+This class contain the system information to be displayed to users
+
+*/
 #include "SystemMessage.h"
 
 SystemMessage::SystemMessage(void){

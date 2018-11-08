@@ -17,10 +17,13 @@ void InputInterfaceWindows::inputButton(void){
 	
 	short int aux = 0;
 	bool x = true;
+	
+	//System only accepts number between 1 and 6.
+	//Anyother number or letter will be rejected and requested a new one
+
 	while (x)
     {
-        cout << "Please enter the menu option number: " << flush; //Implementar na interface de saida
-        string line;
+    	string line;
         if (!getline(cin, line)) {
             cerr << "input failed" << endl;
         }
@@ -32,6 +35,8 @@ void InputInterfaceWindows::inputButton(void){
             		x = false;
 		}
     }
+    
+    //Switch between the button/option choosed
 		switch(aux){
 			case 1:
 				setButtonState(BUTTON_M025, 1);
@@ -55,7 +60,7 @@ void InputInterfaceWindows::inputButton(void){
 				break;
 		}
 } 
-
+//Receive ads
 string InputInterfaceWindows::inputAd(void){
 	string c;
 	getline(cin, c);
