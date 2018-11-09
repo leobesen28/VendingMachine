@@ -38,11 +38,13 @@ Member Function:
 	nextState : move to next state
 */
 
-class MachineState{
+#include "SalesControl.cpp"
+#include "ButtonState.cpp"
+
+class MachineState : public SalesControl, public ButtonState {
 		char state;
 		OutputInterface* outputPtr;
 		InputInterface* inputPtr;
-		SystemMessage sm;
 	public:
 		MachineState(void);
 		~MachineState(void);	

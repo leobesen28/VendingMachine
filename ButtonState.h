@@ -27,6 +27,8 @@ Member functions give acess to get and set the buttons state.
 #define	 BUTTON_DEV  	0x04 
 #define	 BUTTON_MEET 	0x05
 #define	 BUTTON_ETIRPS 	0x06
+#define  BUTTON_STOCK	0x07
+#define  BUTTON_CASH	0x08
 /*
  ----------------------------
 */
@@ -34,6 +36,7 @@ Member functions give acess to get and set the buttons state.
 class ButtonState{
 		bool m025, m050, m100; //moedas
 		bool dev, meet, etirps;
+		bool stock, cash;
 	public:
 		ButtonState(void);
 		~ButtonState(void);

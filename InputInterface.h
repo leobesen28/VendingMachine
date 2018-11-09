@@ -15,11 +15,11 @@
 The abstract class InputInterface is a base class which can be inherited by different systems inputs
 */
 
-#include "ButtonState.cpp"
 
-class InputInterface : public ButtonState {
+
+class InputInterface {
 	public:
-		virtual void inputButton(void) = 0;
+		virtual short int inputButton(void) = 0;
 		virtual string inputAd(void) = 0;
 };
 /*
@@ -28,7 +28,7 @@ It gets all the user inputs, such as the menu option or new ads.
 */
 class InputInterfaceWindows : public InputInterface{
 	public:
-		void inputButton(void);
+		short int inputButton(void);
 		string inputAd(void);
 };
 /*

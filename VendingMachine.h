@@ -13,15 +13,20 @@
 
 
 #include <iostream>
+
 using namespace std;
 #define SYSTEM_WINDOWS
 //#define SYSTEM_STM32
+
 #include <sstream>
 #include <string>
+
+
+
 #include "InputInterface.cpp"
 #include "OutputInterface.cpp"
-#include "SystemMessage.cpp"
-#include "Fila.cpp"
+
+
 #include "MachineState.cpp"
 #include "AdControl.cpp"
 

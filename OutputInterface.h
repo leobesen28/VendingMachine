@@ -15,7 +15,7 @@ The abstract class OutputInterface is a base class which can be inherited by dif
 */
 class OutputInterface{
 	public:
-		virtual void printToUser(string) = 0;
+		virtual void printToUser(string, float, int, char) = 0;
 		virtual void printAd(string) = 0;
 };
 /*
@@ -24,7 +24,7 @@ All the output information is displayed in a windows prompt
 */
 class OutputInterfaceWindows : public OutputInterface {
 	public:
-		void printToUser(string data);
+		void printToUser(string, float, int, char);
 		void printAd(string ad);
 };
 /*

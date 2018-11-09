@@ -12,6 +12,7 @@
 */
 
 #include "Ad.cpp"
+#include "Fila.cpp"
 
 class AdControl {
 		Fila<Ad> displayAds;

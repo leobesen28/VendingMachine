@@ -34,6 +34,9 @@ int main(int argc, char *argv[])
 			cout << "   4 - DEV" << endl;
 			cout << "   5 - MEET" << endl;
 			cout << "   6 - ETIRPS" << endl;
+			cout << "   7 - STOCK" << endl;
+			cout << "   8 - CASH" << endl;
+			cout << "---------------- " << endl;
 			
 			MaquinaDeRefri.nextState();
 			cout << endl;

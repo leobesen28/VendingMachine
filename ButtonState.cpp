@@ -20,6 +20,8 @@ ButtonState::ButtonState(void){
 	dev = 0;
 	meet = 0;
 	etirps = 0;
+	cash = 0;
+	stock = 0;
 }
 
 ButtonState::~ButtonState(void){}
@@ -31,7 +33,9 @@ params
 				BUTTON_M100 	
 				BUTTON_DEV  	 
 				BUTTON_MEET 	
-				BUTTON_ETIRPS 
+				BUTTON_ETIRPS
+				BUTTON_CASH
+				BUTTON_STOCK 
 	
 	state : 	true or false
 */
@@ -57,6 +61,12 @@ void ButtonState::setButtonState(char button, bool state){
 		case 0x06:
 			this->etirps = state;
 			break;
+		case 0x07:
+			this->stock = state;
+			break;
+		case 0x08:
+			this->cash = state;
+			break;
 		default:
 			//criar enum de status de operações STATUS_OK, STATUS_ERRO
 			break;
@@ -70,7 +80,9 @@ params
 				BUTTON_M100 	
 				BUTTON_DEV  	 
 				BUTTON_MEET 	
-				BUTTON_ETIRPS 
+				BUTTON_ETIRPS
+				BUTTON_CASH
+				BUTTON_STOCK 
 */
 
 bool ButtonState::getButtonState(char button){
@@ -93,6 +105,12 @@ bool ButtonState::getButtonState(char button){
 		case 0x06:
 			return etirps;
 			break;
+		case 0x07:
+			return stock;
+			break;
+		case 0x08:
+			return cash;
+			break;
 		default:
 			return 0;
 			break;
@@ -105,7 +123,9 @@ To clear just one button: allButtons = 0, button = 	BUTTON_M025
 													BUTTON_M100 	
 													BUTTON_DEV  	 
 													BUTTON_MEET 	
-													BUTTON_ETIRPS 
+													BUTTON_ETIRPS
+													BUTTON_CASH
+													BUTTON_STOCK 
 */
 void ButtonState::resetButtonState(char allButtons, char button){
 	if(allButtons == 0x01){
@@ -115,6 +135,8 @@ void ButtonState::resetButtonState(char allButtons, char button){
 		dev = 0;
 		meet = 0;
 		etirps = 0;
+		stock = 0;
+		cash = 0;
 	}else{
 		switch(button){
 			case 0x01:
@@ -134,6 +156,12 @@ void ButtonState::resetButtonState(char allButtons, char button){
 				break;
 			case 0x06:
 				this->etirps = 0;
+				break;
+			case 0x07:
+				this->stock = 0;
+				break;
+			case 0x08:
+				this->cash = 0;
 				break;
 			default:
 				break;
