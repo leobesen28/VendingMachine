@@ -11,48 +11,37 @@
 
 */
 
-#include "Fila.h"
+#include "Stack.h"
 
 template <class T>
-Fila<T>::Fila() {
+Stack<T>::Stack() {
    head = 0;
 }
 
 template <class T>
-Fila<T>::~Fila() {
+Stack<T>::~Stack() {
   Node<T>* cursor = head;
   while(head) {
     cursor = cursor->getNextNode();
     delete head;
     head = cursor;
   }
-  head = 0; // Officially empty
+  head = 0; 
 }
 
 template <class T>
-void Fila<T>::insertAfterLast(T dat) {
-  Node<T>* p = head;
-  Node<T>* q = head;
-
-  if (head == 0)
-     head = new Node<T>(dat, head);
-  else {
-     while (q != 0) {
-        p = q;
-        q = p->getNextNode();
-     }
-     p->setNextNode(new Node<T>(dat,0));
-  }
+void Stack<T>::insertFirst(T dat) {
+  head = new Node<T>(dat, this->head);
 }
 
 template <class T>
-T Fila<T>::readFirst() {
+T Stack<T>::readFirst() {
    return head->getValue(); 
 }
 
 template <class T>
-T Fila<T>::removeFirst() {
-  T retval;
+T Stack<T>::removeFirst() {
+  T retval = 0;
   if (head != 0){
      retval = head->getValue();
      Node<T>* oldHead = head;
@@ -63,6 +52,10 @@ T Fila<T>::removeFirst() {
 }
 
 template <class T>
-Node<T>* Fila<T>::getHead(void){
+Node<T>* Stack<T>::getHead(void){
 	return head;
 }
+
+
+
+

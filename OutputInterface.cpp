@@ -1,3 +1,4 @@
+
 /*
 
 -----------------------------------------------------
@@ -18,24 +19,27 @@ sel:
 	0x00 - print data
 	0x01 - print cash
 	0x02 - print stock
+	0xXX - new line
 */
 
-void OutputInterfaceWindows::printToUser(string data, float cash, int stock, char sel){
+void OutputInterfaceWindows::printToUser(string data, float cash, short int stock, char sel){
 	
+
 	switch(sel){
 		case 0x00:
-			cout << "\nSystem Info: " << data << endl;
+			cout << data;
 			break;
 		case 0x01:
-			cout << "\nTotal: " << cash << endl;
+			cout << cash;
 			break;
 		case 0x02:
-			cout << "\nTotal: " << stock << endl;
+			cout << stock;
 			break;
 		default:
+			cout << endl;
 			break;
 	}
-	
+
 }
 void OutputInterfaceWindows::printAd(string ad){
 	cout << ad << endl;

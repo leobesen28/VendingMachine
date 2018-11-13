@@ -11,18 +11,16 @@
 
 */
 
+#include "ClockCalendar.cpp"
 
-template <class T>
-class Fila {
+//Log of the vending machine sells
 
-  	  Node<T>* head;
-  
+class Logs : public ClockCalendar{
+	bool meet;
+	bool etirps;
 	public:
-		
-  	  Fila(void);
-  	  ~Fila(void);
-  	  void insertAfterLast(T dat);
-  	  T readFirst(void);
-  	  T removeFirst(void);
-  	  Node<T>* getHead(void);
+		Logs();
+		~Logs();
+		void setLog(char);
+		char getLog(void);
 };

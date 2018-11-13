@@ -34,6 +34,7 @@ AdControl::~AdControl(void){
 void AdControl::addNewAds(void){
 	
 	if(newAds.getHead() == 0){
+		outputPtr->printToUser("", 0.0, 0, 0x03);
 		outputPtr->printToUser("No ads to display...", 0.0, 0, 0x00);
 	}else{
 		while(newAds.getHead() != 0){
@@ -45,6 +46,7 @@ void AdControl::addNewAds(void){
 void AdControl::sendAdToDisplay(void){
 	
 	if(displayAds.getHead() == 0){
+		outputPtr->printToUser("", 0.0, 0, 0x03);
 		outputPtr->printToUser("List of advertisement is empty", 0.0, 0, 0x00);
 	}else{
 		nowInDisplay = displayAds.removeFirst();
@@ -58,7 +60,7 @@ void AdControl::getAdFromDisplay(void){
 } 
 //Receive new ad from user
 void AdControl::receiveNewAd(void){
-	
 	outputPtr->printToUser("Write below the new Advertisement", 0.0, 0, 0x00);
+	outputPtr->printToUser("", 0.0, 0, 0x03);
 	newAds.insertAfterLast(inputPtr->inputAd());
 } 

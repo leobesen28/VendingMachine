@@ -21,6 +21,7 @@ using namespace std;
 #include <sstream>
 #include <string>
 
+#include "Node.cpp"
 
 
 #include "InputInterface.cpp"

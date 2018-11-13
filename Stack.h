@@ -11,18 +11,17 @@
 
 */
 
-
 template <class T>
-class Fila {
+class Stack {
 
-  	  Node<T>* head;
-  
-	public:
-		
-  	  Fila(void);
-  	  ~Fila(void);
-  	  void insertAfterLast(T dat);
-  	  T readFirst(void);
-  	  T removeFirst(void);
-  	  Node<T>* getHead(void);
+  Node<T>* head;
+
+public:
+  Stack();
+  ~Stack();
+  void insertFirst(T dat);
+  T readFirst();
+  T removeFirst();
+  Node<T>* getHead(void);
 };
+

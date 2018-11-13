@@ -49,4 +49,5 @@ class MachineState : public SalesControl, public ButtonState {
 		MachineState(void);
 		~MachineState(void);	
 		void nextState(void);
+		void addInStock(void);
 };
